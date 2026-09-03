@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buku Interaktif: Puisi Rakyat Kelas 9</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .tab-content { display: none; animation: fadeIn 0.3s ease-in-out; }
+        .tab-content.active { display: block; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .correct { border-color: #22c55e !important; background-color: #f0fdf4 !important; }
+        .incorrect { border-color: #ef4444 !important; background-color: #fef2f2 !important; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <header class="bg-blue-600 text-white shadow-md sticky top-0 z-10">
+        <div class="max-w-5xl mx-auto px-4 py-4 md:py-6 flex flex-col md:flex-row justify-between items-center">
+            <div class="text-center md:text-left mb-4 md:mb-0">
+                <h1 class="text-2xl md:text-3xl font-bold tracking-tight">Buku Digital Interaktif</h1>
+                <p class="text-blue-200 text-sm md:text-base">Bahasa Indonesia SMP Kelas 9 - Puisi Rakyat</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow max-w-5xl mx-auto w-full px-4 py-6 flex flex-col md:flex-row gap-6">
+        
+        <aside class="w-full md:w-64 flex-shrink-0">
+            <nav class="bg-white rounded-xl shadow-sm border border-slate-200 p-2 md:sticky md:top-28 flex md:flex-col overflow-x-auto md:overflow-visible no-scrollbar">
+                <button onclick="switchTab('pendahuluan')" id="btn-pendahuluan" class="tab-btn active w-full text-left px-4 py-3 rounded-lg font-medium text-blue-700 bg-blue-50 hover:bg-blue-50 transition-colors whitespace-nowrap md:whitespace-normal mb-0 md:mb-1">
+                    📖 Pendahuluan
+                </button>
+                <button onclick="switchTab('materi')" id="btn-materi" class="tab-btn w-full text-left px-4 py-3 rounded-lg font-medium text-slate-600 hover:bg-slate-100 transition-colors whitespace-nowrap md:whitespace-normal mb-0 md:mb-1">
+                    📚 Jenis Puisi Rakyat
+                </button>
+                <button onclick="switchTab('rima')" id="btn-rima" class="tab-btn w-full text-left px-4 py-3 rounded-lg font-medium text-slate-600 hover:bg-slate-100 transition-colors whitespace-nowrap md:whitespace-normal mb-0 md:mb-1">
+                    🔤 Jenis-Jenis Rima
+                </button>
+                <button onclick="switchTab('latihan')" id="btn-latihan" class="tab-btn w-full text-left px-4 py-3 rounded-lg font-medium text-slate-600 hover:bg-slate-100 transition-colors whitespace-nowrap md:whitespace-normal">
+                    ✍️ Latihan Soal
+                </button>
+            </nav>
+        </aside>
+
+        <section class="flex-grow bg-white rounded-xl shadow-sm border border-slate-200 p-6 md:p-8">
+            
+            <!-- Tab: Pendahuluan -->
+            <div id="tab-pendahuluan" class="tab-content active">
+                <h2 class="text-2xl font-bold text-slate-800 mb-4 border-b pb-2">Selamat Datang di Modul Puisi Rakyat!</h2>
+                <div class="prose max-w-none text-slate-600 leading-relaxed">
+                    <p class="mb-4">Halo, siswa kelas 9! Di modul interaktif ini, kita akan menyelami kekayaan sastra lama Indonesia, yaitu <strong>Puisi Rakyat</strong>.</p>
+                    <p class="mb-4"><strong>Apa itu Puisi Rakyat?</strong><br>
+                    Puisi rakyat adalah sastra lisan berupa puisi terikat yang berkembang pada masa masyarakat tradisional. Dikatakan "terikat" karena aturan-aturannya sangat ketat, seperti:</p>
+                    <ul class="list-disc pl-6 mb-4 space-y-1">
+                        <li>Jumlah kata dalam satu baris.</li>
+                        <li>Jumlah baris dalam satu bait.</li>
+                        <li>Persajakan atau rima.</li>
+                        <li>Banyaknya suku kata di tiap baris.</li>
+                        <li>Irama.</li>
+                    </ul>
+                    <p>Puisi rakyat biasanya bersifat anonim (tidak diketahui pengarangnya) dan diwariskan secara turun-temurun dari mulut ke mulut.</p>
+                    <div class="mt-8 p-4 bg-blue-50 border-l-4 border-blue-500 rounded-r-lg">
+                        <p class="font-medium text-blue-800">💡 Tip Belajar:</p>
+                        <p class="text-sm text-blue-700 mt-1">Gunakan menu di sebelah kiri (atau di atas pada HP) untuk berpindah antar materi. Pastikan kamu membaca semua materi sebelum mengerjakan Latihan Soal!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab: Materi Puisi Rakyat -->
+            <div id="tab-materi" class="tab-content">
+                <h2 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-2">Jenis-Jenis Puisi Rakyat</h2>
+                
+                <div class="space-y-8">
+                    <!-- Pantun -->
+                    <div class="bg-slate-50 p-6 rounded-xl border border-slate-200">
+                        <h3 class="text-xl font-bold text-blue-600 mb-3 flex items-center">
+                            <span class="bg-blue-100 text-blue-600 w-8 h-8 rounded-full flex items-center justify-center mr-2 text-sm">1</span> Pantun
+                        </h3>
+                        <p class="text-slate-600 mb-4">Pantun adalah puisi Melayu yang mengakar dan membudaya dalam masyarakat. Memiliki fungsi sosial yang kuat, sering digunakan dalam upacara adat, pergaulan, hingga hiburan.</p>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <h4 class="font-semibold text-slate-700 mb-2">Ciri-ciri:</h4>
+                                <ul class="list-disc pl-5 text-sm text-slate-600 space-y-1">
+                                    <li>4 baris dalam 1 bait.</li>
+                                    <li>8-12 suku kata per baris.</li>
+                                    <li>Bersajak <strong>a-b-a-b</strong>.</li>
+                                    <li>Baris 1 & 2 = Sampiran.</li>
+                                    <li>Baris 3 & 4 = Isi.</li>
+                                </ul>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow-inner text-sm italic text-slate-700 border border-slate-100">
+                                <span class="block mb-1">"Air surut memungut bayam, <span class="text-blue-500 font-bold">(a)</span></span>
+                                <span class="block mb-1">Sayur diisi ke dalam kantung. <span class="text-green-500 font-bold">(b)</span></span>
+                                <span class="block mb-1">Jangan diikuti tabiat ayam, <span class="text-blue-500 font-bold">(a)</span></span>
+                                <span class="block">Bertelur sebiji riuh sekampung." <span class="text-green-500 font-bold">(b)</span></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Syair -->
+                    <div class="bg-slate-50 p-6 rounded-xl border border-slate-200">
+                        <h3 class="text-xl font-bold text-teal-600 mb-3 flex items-center">
+                            <span class="bg-teal-100 text-teal-600 w-8 h-8 rounded-full flex items-center justify-center mr-2 text-sm">2</span> Syair
+                        </h3>
+                        <p class="text-slate-600 mb-4">Berasal dari bahasa Arab (syi'ir) yang berarti perasaan yang menyadari. Masuk ke Nusantara bersamaan dengan Islam. Biasanya menceritakan kisah, nasihat, atau agama.</p>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <h4 class="font-semibold text-slate-700 mb-2">Ciri-ciri:</h4>
+                                <ul class="list-disc pl-5 text-sm text-slate-600 space-y-1">
+                                    <li>4 baris dalam 1 bait.</li>
+                                    <li>8-14 suku kata per baris.</li>
+                                    <li>Bersajak <strong>a-a-a-a</strong>.</li>
+                                    <li>Semua baris adalah <strong>isi</strong> (tidak ada sampiran).</li>
+                                </ul>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow-inner text-sm italic text-slate-700 border border-slate-100">
+                                <span class="block mb-1">"Inilah gerangan suatu madah <span class="text-teal-500 font-bold">(a)</span></span>
+                                <span class="block mb-1">Mengarangkan syair terlalu indah <span class="text-teal-500 font-bold">(a)</span></span>
+                                <span class="block mb-1">Membetuli jalan tempat berpindah <span class="text-teal-500 font-bold">(a)</span></span>
+                                <span class="block">Di sanalah i'tikat diperbetuli sudah" <span class="text-teal-500 font-bold">(a)</span></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Gurindam -->
+                    <div class="bg-slate-50 p-6 rounded-xl border border-slate-200">
+                        <h3 class="text-xl font-bold text-amber-600 mb-3 flex items-center">
+                            <span class="bg-amber-100 text-amber-600 w-8 h-8 rounded-full flex items-center justify-center mr-2 text-sm">3</span> Gurindam
+                        </h3>
+                        <p class="text-slate-600 mb-4">Berasal dari bahasa India (kirindam) yang berarti mula-mula atau perumpamaan. Sarat dengan nilai agama dan moral.</p>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <h4 class="font-semibold text-slate-700 mb-2">Ciri-ciri:</h4>
+                                <ul class="list-disc pl-5 text-sm text-slate-600 space-y-1">
+                                    <li>Terdiri atas <strong>dua baris</strong> dalam sebait.</li>
+                                    <li>10-14 kata per baris.</li>
+                                    <li>Bersajak <strong>a-a, b-b, c-c</strong>.</li>
+                                    <li>Baris 1 = Masalah/Syarat.</li>
+                                    <li>Baris 2 = Jawaban/Akibat/Nasihat.</li>
+                                </ul>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow-inner text-sm italic text-slate-700 border border-slate-100 flex flex-col justify-center">
+                                <span class="block mb-1">"Barang siapa tiada memegang agama, <span class="text-amber-500 font-bold">(a)</span></span>
+                                <span class="block">Sekali-kali tiada boleh dibilangkan nama." <span class="text-amber-500 font-bold">(a)</span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab: Jenis Rima -->
+            <div id="tab-rima" class="tab-content">
+                <h2 class="text-2xl font-bold text-slate-800 mb-4 border-b pb-2">Jenis-Jenis Rima dalam Puisi Rakyat</h2>
+                <p class="text-slate-600 mb-8 leading-relaxed">Rima adalah pengulangan bunyi yang berselang, baik di dalam larik sajak maupun pada akhir larik sajak. Dalam pantun atau puisi rakyat lainnya, rima sangat penting untuk menjaga keindahan dan irama saat dibaca. Berikut adalah penjelasan lengkap beserta contoh bait utuhnya:</p>
+                
+                <div class="space-y-6">
+                    
+                    <!-- 1. Rima Sempurna -->
+                    <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+                        <div class="bg-indigo-50 px-6 py-4 border-b border-indigo-100">
+                            <h3 class="text-lg font-bold text-indigo-800 flex items-center">
+                                <span class="bg-indigo-200 text-indigo-800 w-6 h-6 rounded-full flex items-center justify-center mr-2 text-xs">1</span> 
+                                Rima Sempurna
+                            </h3>
+                            <p class="text-slate-700 mt-2 text-sm">Persamaan bunyi pada suku kata terakhir secara penuh. Bunyi vokal dan konsonan pada satu suku kata terakhir pembentuk kata tersebut sama persis.</p>
+                        </div>
+                        <div class="p-6 grid md:grid-cols-2 gap-6 items-center">
+                            <div class="bg-slate-50 p-4 rounded-lg border border-slate-200 text-slate-700 italic">
+                                <p>Anak ayam turun sepu<span class="font-bold text-indigo-600 bg-indigo-100 px-1 rounded">luh</span>,</p>
+                                <p>Mati satu tinggal sembi<span class="font-bold text-rose-600 bg-rose-100 px-1 rounded">lan</span>.</p>
+                                <p>Tuntut ilmu bersungguh-sung<span class="font-bold text-indigo-600 bg-indigo-100 px-1 rounded">guh</span>,</p>
+                                <p>Supaya jangan ketingga<span class="font-bold text-rose-600 bg-rose-100 px-1 rounded">lan</span>.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-slate-800 mb-2">Analisis:</h4>
+                                <p class="text-sm text-slate-600 leading-relaxed">Perhatikan baris ke-2 dan ke-4. Kata "sembi-<strong>lan</strong>" dan "ketingga-<strong>lan</strong>" memiliki suku kata terakhir yang sama persis secara utuh, yaitu <span class="text-rose-600 font-semibold">-lan</span>. Ini adalah contoh rima sempurna.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. Rima Tak Sempurna -->
+                    <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+                        <div class="bg-emerald-50 px-6 py-4 border-b border-emerald-100">
+                            <h3 class="text-lg font-bold text-emerald-800 flex items-center">
+                                <span class="bg-emerald-200 text-emerald-800 w-6 h-6 rounded-full flex items-center justify-center mr-2 text-xs">2</span> 
+                                Rima Tak Sempurna
+                            </h3>
+                            <p class="text-slate-700 mt-2 text-sm">Persamaan bunyi pada sebagian suku kata terakhir. Biasanya hanya bunyi vokalnya atau bunyi konsonan akhirnya saja yang sama, namun suku katanya berbeda.</p>
+                        </div>
+                        <div class="p-6 grid md:grid-cols-2 gap-6 items-center">
+                            <div class="bg-slate-50 p-4 rounded-lg border border-slate-200 text-slate-700 italic">
+                                <p>Kalau ada sumur di la<span class="font-bold text-emerald-600 bg-emerald-100 px-1 rounded">dang</span>,</p>
+                                <p>Boleh kita menumpang man<span class="font-bold text-amber-600 bg-amber-100 px-1 rounded">di</span>.</p>
+                                <p>Kalau ada umur yang pan<span class="font-bold text-emerald-600 bg-emerald-100 px-1 rounded">jang</span>,</p>
+                                <p>Boleh kita berjumpa la<span class="font-bold text-amber-600 bg-amber-100 px-1 rounded">gi</span>.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-slate-800 mb-2">Analisis:</h4>
+                                <p class="text-sm text-slate-600 leading-relaxed">Pada baris 1 & 3, suku katanya berbeda ("-dang" vs "-jang"), tetapi memiliki akhir bunyi yang sama yaitu <span class="text-emerald-600 font-semibold">-ang</span>. Begitu pula pada baris 2 & 4 ("-di" vs "-gi"), hanya berbagi huruf vokal yang sama yaitu <span class="text-amber-600 font-semibold">-i</span>.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. Rima Terbuka -->
+                    <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+                        <div class="bg-sky-50 px-6 py-4 border-b border-sky-100">
+                            <h3 class="text-lg font-bold text-sky-800 flex items-center">
+                                <span class="bg-sky-200 text-sky-800 w-6 h-6 rounded-full flex items-center justify-center mr-2 text-xs">3</span> 
+                                Rima Terbuka
+                            </h3>
+                            <p class="text-slate-700 mt-2 text-sm">Terjadi apabila suku kata terakhir pada sebuah baris diakhiri dengan huruf vokal (a, i, u, e, o) dan tidak ditutup oleh huruf konsonan.</p>
+                        </div>
+                        <div class="p-6 grid md:grid-cols-2 gap-6 items-center">
+                            <div class="bg-slate-50 p-4 rounded-lg border border-slate-200 text-slate-700 italic">
+                                <p>Berakit-rakit ke hu<span class="font-bold text-sky-600 bg-sky-100 px-1 rounded">lu</span>,</p>
+                                <p>Berenang-renang ke tepi<span class="font-bold text-slate-400">an</span>.</p>
+                                <p>Bersakit-sakit dahu<span class="font-bold text-sky-600 bg-sky-100 px-1 rounded">lu</span>,</p>
+                                <p>Bersenang-senang kemudi<span class="font-bold text-slate-400">an</span>.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-slate-800 mb-2">Analisis:</h4>
+                                <p class="text-sm text-slate-600 leading-relaxed">Baris pertama ("hulu") dan baris ketiga ("dahulu") diakhiri oleh suku kata yang berakhiran huruf vokal <span class="text-sky-600 font-semibold">"u"</span> secara terbuka tanpa penutup huruf mati.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. Rima Tertutup -->
+                    <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+                        <div class="bg-purple-50 px-6 py-4 border-b border-purple-100">
+                            <h3 class="text-lg font-bold text-purple-800 flex items-center">
+                                <span class="bg-purple-200 text-purple-800 w-6 h-6 rounded-full flex items-center justify-center mr-2 text-xs">4</span> 
+                                Rima Tertutup
+                            </h3>
+                            <p class="text-slate-700 mt-2 text-sm">Terjadi apabila suku kata terakhir pada sebuah baris diakhiri dengan huruf konsonan (huruf mati). Suku katanya tertutup oleh bunyi konsonan.</p>
+                        </div>
+                        <div class="p-6 grid md:grid-cols-2 gap-6 items-center">
+                            <div class="bg-slate-50 p-4 rounded-lg border border-slate-200 text-slate-700 italic">
+                                <p>Buah cempedak di luar pag<span class="font-bold text-purple-600 bg-purple-100 px-1 rounded">ar</span>,</p>
+                                <p>Ambil galah tolong jolokk<span class="font-bold text-fuchsia-600 bg-fuchsia-100 px-1 rounded">an</span>.</p>
+                                <p>Saya budak baru belaj<span class="font-bold text-purple-600 bg-purple-100 px-1 rounded">ar</span>,</p>
+                                <p>Kalau salah tolong tunjukk<span class="font-bold text-fuchsia-600 bg-fuchsia-100 px-1 rounded">an</span>.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-slate-800 mb-2">Analisis:</h4>
+                                <p class="text-sm text-slate-600 leading-relaxed">Seluruh baris pada pantun di atas adalah rima tertutup. Baris 1 & 3 ditutup oleh konsonan <span class="text-purple-600 font-semibold">"r"</span>, sedangkan baris 2 & 4 ditutup oleh konsonan <span class="text-fuchsia-600 font-semibold">"n"</span>.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5. Rima Mutlak -->
+                    <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+                        <div class="bg-orange-50 px-6 py-4 border-b border-orange-100">
+                            <h3 class="text-lg font-bold text-orange-800 flex items-center">
+                                <span class="bg-orange-200 text-orange-800 w-6 h-6 rounded-full flex items-center justify-center mr-2 text-xs">5</span> 
+                                Rima Mutlak
+                            </h3>
+                            <p class="text-slate-700 mt-2 text-sm">Persamaan bunyi pada satu kata utuh yang diulang-ulang. Biasanya jarang terjadi pada pantun murni, namun bisa ditemukan dalam beberapa syair modern atau larik tertentu.</p>
+                        </div>
+                        <div class="p-6 grid md:grid-cols-2 gap-6 items-center">
+                            <div class="bg-slate-50 p-4 rounded-lg border border-slate-200 text-slate-700 italic">
+                                <p>Beli kain di pasar ba<span class="font-bold text-orange-600 bg-orange-100 px-1 rounded">ru</span>,</p>
+                                <p>Kain dipotong untuk dija<span class="font-bold text-slate-500">hit</span>.</p>
+                                <p>Senangnya punya teman ba<span class="font-bold text-orange-600 bg-orange-100 px-1 rounded">ru</span>,</p>
+                                <p>Bermain bersama tak lagi pa<span class="font-bold text-slate-500">hit</span>.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-slate-800 mb-2">Analisis:</h4>
+                                <p class="text-sm text-slate-600 leading-relaxed">Kata <span class="text-orange-600 font-semibold">"baru"</span> diulang secara utuh (mutlak) pada akhir baris pertama dan baris ketiga. Bunyi dan bentuk katanya sama persis.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Tab: Latihan Soal -->
+            <div id="tab-latihan" class="tab-content">
+                <h2 class="text-2xl font-bold text-slate-800 mb-2 border-b pb-2">Latihan Soal Interaktif</h2>
+                <p class="text-slate-600 mb-6">Uji pemahamanmu dengan menjawab pertanyaan-pertanyaan di bawah ini. Sistem akan langsung menilai jawabanmu!</p>
+
+                <form id="quiz-form" class="space-y-8" onsubmit="event.preventDefault(); checkAnswers();">
+                    
+                    <!-- Data Diri -->
+                    <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm grid md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1" for="nama_siswa">Nama Lengkap</label>
+                            <input type="text" id="nama_siswa" required placeholder="Masukkan namamu..." class="w-full p-2.5 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1" for="kelas_siswa">Kelas</label>
+                            <select id="kelas_siswa" required class="w-full p-2.5 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all">
+                                <option value="">-- Pilih Kelas --</option>
+                                <option value="9A">9A</option>
+                                <option value="9B">9B</option>
+                                <option value="9C">9C</option>
+                                <option value="9D">9D</option>
+                                <option value="9E">9E</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Soal 1 -->
+                    <div class="bg-blue-50/50 p-5 rounded-xl border border-blue-100">
+                        <h3 class="font-semibold text-slate-800 mb-3">1. Identifikasi Puisi Rakyat</h3>
+                        <p class="italic text-slate-700 bg-white p-3 rounded border border-slate-200 mb-4">
+                            "Apabila terpelihara mata,<br>Sedikitlah cita-cita."
+                        </p>
+                        <label class="block text-sm font-medium text-slate-700 mb-1" for="q1">Termasuk jenis puisi rakyat apakah teks di atas?</label>
+                        <select id="q1" class="w-full md:w-1/2 p-2.5 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all">
+                            <option value="">-- Pilih Jawaban --</option>
+                            <option value="pantun">Pantun</option>
+                            <option value="syair">Syair</option>
+                            <option value="gurindam">Gurindam</option>
+                        </select>
+                        <p id="fb-q1" class="text-sm mt-2 hidden"></p>
+                    </div>
+
+                    <!-- Soal 2 -->
+                    <div class="bg-blue-50/50 p-5 rounded-xl border border-blue-100">
+                        <h3 class="font-semibold text-slate-800 mb-3">2. Melengkapi Pantun</h3>
+                        <p class="text-sm text-slate-600 mb-2">Lengkapilah pantun rumpang berikut agar bersajak a-b-a-b!</p>
+                        <div class="italic text-slate-700 bg-white p-3 rounded border border-slate-200 mb-4 space-y-2">
+                            <p>Jalan-jalan ke kota Blitar, <span class="text-xs text-blue-500 not-italic font-bold">(a)</span></p>
+                            <p>Jangan lupa membeli sukun. <span class="text-xs text-green-500 not-italic font-bold">(b)</span></p>
+                            <input type="text" id="q2_line3" placeholder="Tulis baris ke-3 di sini..." class="w-full p-2 border border-slate-300 rounded outline-none focus:border-blue-500 not-italic text-sm">
+                            <input type="text" id="q2_line4" placeholder="Tulis baris ke-4 di sini..." class="w-full p-2 border border-slate-300 rounded outline-none focus:border-green-500 not-italic text-sm">
+                        </div>
+                        <p id="fb-q2" class="text-sm mt-2 hidden"></p>
+                    </div>
+
+                    <!-- Soal 3 -->
+                    <div class="bg-blue-50/50 p-5 rounded-xl border border-blue-100">
+                        <h3 class="font-semibold text-slate-800 mb-3">3. Analisis Rima</h3>
+                        <div class="italic text-slate-700 bg-white p-3 rounded border border-slate-200 mb-4">
+                            "Kalau ada sumur di <span class="font-bold text-red-500">ladang</span>,<br>
+                            Boleh kita menumpang mandi.<br>
+                            Kalau ada umur yang <span class="font-bold text-red-500">panjang</span>,<br>
+                            Boleh kita berjumpa lagi."
+                        </div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1" for="q3">Rima pada kata "ladang" dan "panjang" termasuk jenis rima apa?</label>
+                        <select id="q3" class="w-full md:w-1/2 p-2.5 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all">
+                            <option value="">-- Pilih Jawaban --</option>
+                            <option value="sempurna">Rima Sempurna</option>
+                            <option value="taksempurna">Rima Tak Sempurna</option>
+                            <option value="terbuka">Rima Terbuka</option>
+                            <option value="tertutup">Rima Tertutup</option>
+                        </select>
+                        <p id="fb-q3" class="text-sm mt-2 hidden"></p>
+                    </div>
+
+                    <!-- Soal 4 -->
+                    <div class="bg-blue-50/50 p-5 rounded-xl border border-blue-100">
+                        <h3 class="font-semibold text-slate-800 mb-3">4. Ciri Khas Syair</h3>
+                        <label class="block text-sm font-medium text-slate-700 mb-1" for="q4">Ciri utama syair yang membedakannya dari pantun adalah...</label>
+                        <select id="q4" class="w-full md:w-2/3 p-2.5 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all">
+                            <option value="">-- Pilih Jawaban --</option>
+                            <option value="sajak_abab">Bersajak a-b-a-b</option>
+                            <option value="semua_isi">Semua barisnya adalah isi</option>
+                            <option value="ada_sampiran">Memiliki sampiran dan isi</option>
+                            <option value="dua_baris">Terdiri dari dua baris sebait</option>
+                        </select>
+                        <p id="fb-q4" class="text-sm mt-2 hidden"></p>
+                    </div>
+
+                    <!-- Soal 5 -->
+                    <div class="bg-blue-50/50 p-5 rounded-xl border border-blue-100">
+                        <h3 class="font-semibold text-slate-800 mb-3">5. Struktur Pantun</h3>
+                        <label class="block text-sm font-medium text-slate-700 mb-1" for="q5">Baris pertama dan kedua pada pantun disebut sebagai...</label>
+                        <select id="q5" class="w-full md:w-1/2 p-2.5 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all">
+                            <option value="">-- Pilih Jawaban --</option>
+                            <option value="isi">Isi</option>
+                            <option value="sampiran">Sampiran</option>
+                            <option value="rima">Rima</option>
+                            <option value="bait">Bait</option>
+                        </select>
+                        <p id="fb-q5" class="text-sm mt-2 hidden"></p>
+                    </div>
+
+                    <!-- Soal 6 -->
+                    <div class="bg-blue-50/50 p-5 rounded-xl border border-blue-100">
+                        <h3 class="font-semibold text-slate-800 mb-3">6. Persajakan Gurindam</h3>
+                        <label class="block text-sm font-medium text-slate-700 mb-1" for="q6">Bagaimana pola persajakan (rima akhir) pada gurindam?</label>
+                        <select id="q6" class="w-full md:w-1/2 p-2.5 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all">
+                            <option value="">-- Pilih Jawaban --</option>
+                            <option value="abab">a-b-a-b</option>
+                            <option value="aaaa">a-a-a-a</option>
+                            <option value="aabbcc">a-a, b-b, c-c</option>
+                            <option value="bebas">Bebas tidak beraturan</option>
+                        </select>
+                        <p id="fb-q6" class="text-sm mt-2 hidden"></p>
+                    </div>
+
+                    <!-- Soal 7 -->
+                    <div class="bg-blue-50/50 p-5 rounded-xl border border-blue-100">
+                        <h3 class="font-semibold text-slate-800 mb-3">7. Identifikasi Puisi Rakyat</h3>
+                        <p class="italic text-slate-700 bg-white p-3 rounded border border-slate-200 mb-4">
+                            "Barang siapa mengenal Allah,<br>Suruh dan tegahnya tiada ia menyalah."
+                        </p>
+                        <label class="block text-sm font-medium text-slate-700 mb-1" for="q7">Kutipan di atas termasuk ke dalam jenis puisi rakyat...</label>
+                        <select id="q7" class="w-full md:w-1/2 p-2.5 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all">
+                            <option value="">-- Pilih Jawaban --</option>
+                            <option value="pantun">Pantun</option>
+                            <option value="syair">Syair</option>
+                            <option value="gurindam">Gurindam</option>
+                        </select>
+                        <p id="fb-q7" class="text-sm mt-2 hidden"></p>
+                    </div>
+
+                    <!-- Soal 8 -->
+                    <div class="bg-blue-50/50 p-5 rounded-xl border border-blue-100">
+                        <h3 class="font-semibold text-slate-800 mb-3">8. Syarat Pantun</h3>
+                        <label class="block text-sm font-medium text-slate-700 mb-1" for="q8">Jumlah suku kata yang umum dalam satu baris pantun adalah...</label>
+                        <select id="q8" class="w-full md:w-1/2 p-2.5 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all">
+                            <option value="">-- Pilih Jawaban --</option>
+                            <option value="4_6">4 - 6 suku kata</option>
+                            <option value="8_12">8 - 12 suku kata</option>
+                            <option value="12_16">12 - 16 suku kata</option>
+                            <option value="bebas">Tidak ada batasan</option>
+                        </select>
+                        <p id="fb-q8" class="text-sm mt-2 hidden"></p>
+                    </div>
+
+                    <!-- Soal 9 -->
+                    <div class="bg-blue-50/50 p-5 rounded-xl border border-blue-100">
+                        <h3 class="font-semibold text-slate-800 mb-3">9. Jenis Rima</h3>
+                        <label class="block text-sm font-medium text-slate-700 mb-1" for="q9">Rima yang terjadi apabila suku kata terakhir berakhiran huruf vokal (a, i, u, e, o) disebut...</label>
+                        <select id="q9" class="w-full md:w-1/2 p-2.5 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all">
+                            <option value="">-- Pilih Jawaban --</option>
+                            <option value="terbuka">Rima Terbuka</option>
+                            <option value="tertutup">Rima Tertutup</option>
+                            <option value="mutlak">Rima Mutlak</option>
+                            <option value="sempurna">Rima Sempurna</option>
+                        </select>
+                        <p id="fb-q9" class="text-sm mt-2 hidden"></p>
+                    </div>
+
+                    <!-- Soal 10 -->
+                    <div class="bg-blue-50/50 p-5 rounded-xl border border-blue-100">
+                        <h3 class="font-semibold text-slate-800 mb-3">10. Analisis Kata</h3>
+                        <label class="block text-sm font-medium text-slate-700 mb-1" for="q10">Kata "buku" dan "paku" jika digunakan di akhir baris merupakan contoh dari rima...</label>
+                        <select id="q10" class="w-full md:w-1/2 p-2.5 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all">
+                            <option value="">-- Pilih Jawaban --</option>
+                            <option value="tertutup">Rima Tertutup</option>
+                            <option value="terbuka">Rima Terbuka</option>
+                            <option value="mutlak">Rima Mutlak</option>
+                        </select>
+                        <p id="fb-q10" class="text-sm mt-2 hidden"></p>
+                    </div>
+
+                    <!-- Soal 11 -->
+                    <div class="bg-blue-50/50 p-5 rounded-xl border border-blue-100">
+                        <h3 class="font-semibold text-slate-800 mb-3">11. Pesan Puisi Rakyat</h3>
+                        <p class="italic text-slate-700 bg-white p-3 rounded border border-slate-200 mb-4">
+                            "Asam kandis asam gelugur,<br>
+                            Ketiga asam riang-riang.<br>
+                            Menangis mayat di pintu kubur,<br>
+                            Teringat badan tidak sembahyang."
+                        </p>
+                        <label class="block text-sm font-medium text-slate-700 mb-1" for="q11">Apa pesan atau makna dari pantun di atas?</label>
+                        <select id="q11" class="w-full md:w-3/4 p-2.5 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all">
+                            <option value="">-- Pilih Jawaban --</option>
+                            <option value="buah">Macam-macam buah asam</option>
+                            <option value="ibadah">Pentingnya melaksanakan ibadah sembahyang/salat</option>
+                            <option value="sedih">Kesedihan saat seseorang meninggal dunia</option>
+                            <option value="kubur">Suasana menyeramkan di kuburan</option>
+                        </select>
+                        <p id="fb-q11" class="text-sm mt-2 hidden"></p>
+                    </div>
+
+                    <!-- Soal 12 -->
+                    <div class="bg-blue-50/50 p-5 rounded-xl border border-blue-100">
+                        <h3 class="font-semibold text-slate-800 mb-3">12. Asal Usul Kata</h3>
+                        <label class="block text-sm font-medium text-slate-700 mb-1" for="q12">Kata "Gurindam" berasal dari bahasa India "kirindam" yang memiliki arti...</label>
+                        <select id="q12" class="w-full md:w-1/2 p-2.5 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all">
+                            <option value="">-- Pilih Jawaban --</option>
+                            <option value="cerita">Cerita masa lalu</option>
+                            <option value="mula">Mula-mula atau perumpamaan</option>
+                            <option value="nasihat">Nasihat orang tua</option>
+                            <option value="agama">Aturan beragama</option>
+                        </select>
+                        <p id="fb-q12" class="text-sm mt-2 hidden"></p>
+                    </div>
+
+                    <!-- Soal 13 -->
+                    <div class="bg-blue-50/50 p-5 rounded-xl border border-blue-100">
+                        <h3 class="font-semibold text-slate-800 mb-3">13. Ciri-ciri Pantun</h3>
+                        <label class="block text-sm font-medium text-slate-700 mb-1" for="q13">Manakah di bawah ini yang <strong>BUKAN</strong> merupakan ciri-ciri pantun?</label>
+                        <select id="q13" class="w-full md:w-3/4 p-2.5 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all">
+                            <option value="">-- Pilih Jawaban --</option>
+                            <option value="4baris">Terdiri dari 4 baris sebait</option>
+                            <option value="sampiranisi">Memiliki sampiran dan isi</option>
+                            <option value="aaaa">Bersajak a-a-a-a</option>
+                            <option value="8_12suku">Memiliki 8-12 suku kata per baris</option>
+                        </select>
+                        <p id="fb-q13" class="text-sm mt-2 hidden"></p>
+                    </div>
+
+                    <!-- Soal 14 -->
+                    <div class="bg-blue-50/50 p-5 rounded-xl border border-blue-100">
+                        <h3 class="font-semibold text-slate-800 mb-3">14. Jenis Rima (Pengulangan Kata)</h3>
+                        <label class="block text-sm font-medium text-slate-700 mb-1" for="q14">Persamaan bunyi pada satu kata utuh yang diulang-ulang (misalnya kata "baru" diulang menjadi "baru") disebut rima...</label>
+                        <select id="q14" class="w-full md:w-1/2 p-2.5 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all">
+                            <option value="">-- Pilih Jawaban --</option>
+                            <option value="sempurna">Rima Sempurna</option>
+                            <option value="taksempurna">Rima Tak Sempurna</option>
+                            <option value="mutlak">Rima Mutlak</option>
+                            <option value="tertutup">Rima Tertutup</option>
+                        </select>
+                        <p id="fb-q14" class="text-sm mt-2 hidden"></p>
+                    </div>
+
+                    <!-- Soal 15 -->
+                    <div class="bg-blue-50/50 p-5 rounded-xl border border-blue-100">
+                        <h3 class="font-semibold text-slate-800 mb-3">15. Jenis Rima (Suku Kata)</h3>
+                        <label class="block text-sm font-medium text-slate-700 mb-1" for="q15">Persamaan bunyi pada suku kata terakhir secara penuh (contoh: sepu-<b>luh</b> dengan sung-<b>guh</b>) disebut rima...</label>
+                        <select id="q15" class="w-full md:w-1/2 p-2.5 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all">
+                            <option value="">-- Pilih Jawaban --</option>
+                            <option value="sempurna">Rima Sempurna</option>
+                            <option value="taksempurna">Rima Tak Sempurna</option>
+                            <option value="terbuka">Rima Terbuka</option>
+                            <option value="mutlak">Rima Mutlak</option>
+                        </select>
+                        <p id="fb-q15" class="text-sm mt-2 hidden"></p>
+                    </div>
+
+                    <button type="submit" class="w-full md:w-auto px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow-md transition-colors flex items-center justify-center">
+                        ✓ Periksa Jawaban
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Custom Modal Message Box (Pengganti Alert) -->
+    <div id="result-modal" class="fixed inset-0 bg-slate-900/50 hidden items-center justify-center z-50 p-4 opacity-0 transition-opacity duration-300">
+        <div class="bg-white rounded-2xl shadow-xl max-w-sm w-full p-6 transform scale-95 transition-transform duration-300" id="modal-content">
+            <div class="text-center">
+                <div id="modal-icon" class="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-blue-100 mb-4">
+                    <!-- Icon will be injected by JS -->
+                </div>
+                <h3 class="text-xl font-bold text-slate-800 mb-2" id="modal-title">Hasil Evaluasi</h3>
+                <p class="text-slate-600 mb-6" id="modal-message">Pesan evaluasi akan muncul di sini.</p>
+                <button onclick="closeModal()" class="w-full px-4 py-2 bg-slate-800 hover:bg-slate-900 text-white font-medium rounded-lg transition-colors">
+                    Tutup
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Logika Tab Navigation
+        function switchTab(tabId) {
+            // Hide all contents
+            document.querySelectorAll('.tab-content').forEach(el => {
+                el.classList.remove('active');
+            });
+            // Reset all buttons
+            document.querySelectorAll('.tab-btn').forEach(el => {
+                el.classList.remove('active', 'text-blue-700', 'bg-blue-50');
+                el.classList.add('text-slate-600');
+            });
+
+            // Show selected content
+            document.getElementById('tab-' + tabId).classList.add('active');
+            
+            // Highlight selected button
+            const activeBtn = document.getElementById('btn-' + tabId);
+            activeBtn.classList.remove('text-slate-600');
+            activeBtn.classList.add('active', 'text-blue-700', 'bg-blue-50');
+
+            // Scroll to top on mobile when switching tab
+            if(window.innerWidth < 768) {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        // Logika Modal Alert
+        const modal = document.getElementById('result-modal');
+        const modalContent = document.getElementById('modal-content');
+        
+        function showModal(title, message, type = 'success') {
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-message').innerText = message;
+            
+            const iconDiv = document.getElementById('modal-icon');
+            if(type === 'success') {
+                iconDiv.className = 'mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-green-100 text-green-600 mb-4 text-3xl';
+                iconDiv.innerHTML = '🎉';
+            } else if (type === 'warning') {
+                iconDiv.className = 'mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-amber-100 text-amber-600 mb-4 text-3xl';
+                iconDiv.innerHTML = '🤔';
+            } else {
+                iconDiv.className = 'mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-red-100 text-red-600 mb-4 text-3xl';
+                iconDiv.innerHTML = '❌';
+            }
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            
+            // Trigger animation
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modalContent.classList.remove('scale-95');
+                modalContent.classList.add('scale-100');
+            }, 10);
+        }
+
+        function closeModal() {
+            modal.classList.add('opacity-0');
+            modalContent.classList.remove('scale-100');
+            modalContent.classList.add('scale-95');
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }, 300);
+        }
+
+        // Logika Penilaian Kuis
+        function checkAnswers() {
+            // Validasi Data Diri
+            const nama = document.getElementById('nama_siswa').value.trim();
+            const kelas = document.getElementById('kelas_siswa').value;
+            
+            if (!nama || !kelas) {
+                showModal("Data Diri Belum Lengkap", "Silakan isi Nama dan Kelas terlebih dahulu sebelum memeriksa jawaban.", "warning");
+                return;
+            }
+
+            let score = 0;
+            let maxScore = 15;
+
+            // Q1: Gurindam
+            const q1 = document.getElementById('q1');
+            const fb1 = document.getElementById('fb-q1');
+            if (q1.value === 'gurindam') {
+                score++;
+                setFeedback(q1, fb1, true, "Benar! Terdiri dari 2 baris dan berisi syarat-akibat/nasihat.");
+            } else {
+                setFeedback(q1, fb1, false, "Kurang tepat. Perhatikan jumlah barisnya, ini adalah Gurindam.");
+            }
+
+            // Q2: Pantun (Penilaian manual via regex/keyword sederhana untuk simulasi)
+            const q2_l3 = document.getElementById('q2_line3');
+            const q2_l4 = document.getElementById('q2_line4');
+            const fb2 = document.getElementById('fb-q2');
+            
+            const v3 = q2_l3.value.trim().toLowerCase();
+            const v4 = q2_l4.value.trim().toLowerCase();
+
+            if (v3 === "" || v4 === "") {
+                setFeedback(q2_l4, fb2, false, "Baris 3 dan 4 tidak boleh kosong.");
+                q2_l3.classList.add('incorrect');
+            } else {
+                // Cek rima akhir sederhana: baris 3 harus berakhiran "ar", baris 4 "un"
+                if (v3.endsWith('ar') && v4.endsWith('un')) {
+                    score++;
+                    setFeedback(q2_l4, fb2, true, "Luar biasa! Rimanya sudah sesuai (a-b-a-b).");
+                    q2_l3.classList.add('correct');
+                    q2_l3.classList.remove('incorrect');
+                } else {
+                    setFeedback(q2_l4, fb2, false, "Coba perhatikan lagi. Baris ke-3 harus berakhiran bunyi '-ar' dan baris ke-4 berakhiran '-un'.");
+                    q2_l3.classList.add('incorrect');
+                    q2_l3.classList.remove('correct');
+                }
+            }
+
+            // Q3: Rima Tak Sempurna
+            const q3 = document.getElementById('q3');
+            const fb3 = document.getElementById('fb-q3');
+            if (q3.value === 'taksempurna') {
+                score++;
+                setFeedback(q3, fb3, true, "Tepat sekali! Persamaan bunyi hanya pada sebagian suku kata terakhir ('-ang').");
+            } else {
+                setFeedback(q3, fb3, false, "Kurang tepat. Jawabannya Rima Tak Sempurna karena bunyi yang sama hanya '-ang' pada sebagian suku kata.");
+            }
+
+            // Penilaian Q4-Q15
+            const answers = {
+                'q4': { ans: 'semua_isi', msgRight: 'Benar! Syair tidak memiliki sampiran.', msgWrong: 'Salah. Syair berbeda dengan pantun karena semua barisnya adalah isi.' },
+                'q5': { ans: 'sampiran', msgRight: 'Tepat! Baris 1 & 2 adalah sampiran.', msgWrong: 'Salah. Baris 1 & 2 disebut sampiran.' },
+                'q6': { ans: 'aabbcc', msgRight: 'Benar! Gurindam bersajak a-a, b-b, dst.', msgWrong: 'Salah. Gurindam bersajak a-a, b-b, c-c.' },
+                'q7': { ans: 'gurindam', msgRight: 'Benar! 2 baris dan berisi nasihat agama.', msgWrong: 'Salah. Itu adalah Gurindam.' },
+                'q8': { ans: '8_12', msgRight: 'Tepat sekali!', msgWrong: 'Salah. Pantun biasanya terdiri dari 8-12 suku kata.' },
+                'q9': { ans: 'terbuka', msgRight: 'Benar! Berakhiran vokal disebut rima terbuka.', msgWrong: 'Salah. Jawabannya adalah Rima Terbuka.' },
+                'q10': { ans: 'terbuka', msgRight: 'Benar! Berakhiran vokal "u".', msgWrong: 'Salah. Keduanya berakhiran huruf vokal (u), jadi Rima Terbuka.' },
+                'q11': { ans: 'ibadah', msgRight: 'Tepat! Baris 3 & 4 berisi pesan tersebut.', msgWrong: 'Salah. Perhatikan isi pada baris 3 & 4.' },
+                'q12': { ans: 'mula', msgRight: 'Benar!', msgWrong: 'Salah. Kirindam berarti mula-mula atau perumpamaan.' },
+                'q13': { ans: 'aaaa', msgRight: 'Benar! Bersajak a-a-a-a adalah ciri Syair.', msgWrong: 'Salah. Bersajak a-a-a-a BUKAN ciri pantun, melainkan syair.' },
+                'q14': { ans: 'mutlak', msgRight: 'Tepat sekali!', msgWrong: 'Salah. Mengulang kata secara utuh disebut Rima Mutlak.' },
+                'q15': { ans: 'sempurna', msgRight: 'Benar! Suku kata terakhirnya sama persis.', msgWrong: 'Salah. Jawabannya adalah Rima Sempurna.' }
+            };
+
+            for (let i = 4; i <= 15; i++) {
+                const qId = 'q' + i;
+                const fbId = 'fb-q' + i;
+                const el = document.getElementById(qId);
+                const fb = document.getElementById(fbId);
+                
+                if (el.value === answers[qId].ans) {
+                    score++;
+                    setFeedback(el, fb, true, answers[qId].msgRight);
+                } else {
+                    setFeedback(el, fb, false, answers[qId].msgWrong);
+                }
+            }
+
+            // Tampilkan Modal Hasil
+            const studentName = nama.split(' ')[0]; // Ambil nama panggilan (kata pertama)
+            
+            if (score === maxScore) {
+                showModal("Sempurna, " + studentName + "!", `Kamu dari kelas ${kelas} menjawab semua pertanyaan dengan benar. Skor: ${score}/${maxScore}`, "success");
+            } else if (score >= 10) {
+                showModal("Kerja Bagus, " + studentName + "!", `Kamu mendapatkan skor ${score} dari ${maxScore}. Hebat, pertahankan!`, "success");
+            } else if (score > 0) {
+                showModal("Terus Belajar, " + studentName + "!", `Skor kamu ${score} dari ${maxScore}. Ayo pelajari lagi materi yang masih salah.`, "warning");
+            } else {
+                showModal("Jangan Menyerah, " + studentName + "!", "Skor kamu masih 0. Yuk, baca ulang materinya perlahan-lahan.", "error");
+            }
+        }
+
+        // Helper function to show UI feedback per field
+        function setFeedback(element, feedbackElement, isCorrect, message) {
+            element.classList.remove('correct', 'incorrect');
+            element.classList.add(isCorrect ? 'correct' : 'incorrect');
+            
+            feedbackElement.innerText = message;
+            feedbackElement.className = `text-sm mt-2 font-medium block ${isCorrect ? 'text-green-600' : 'text-red-500'}`;
+        }
+    </script>
+</body>
+</html>
